@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive tour and travel agency website design tutorial</title>
+    <title>Tour And Travels</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -12,7 +12,49 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css">
-
+    <script>
+        function validate()
+        { 
+            var email = document.getElementById("EMAIL");
+            var password = document.getElementById("PASS");
+            if(email.value.trim()=="")
+            {
+                alert("*Email is Empty!");
+                email.style.border ="solid 2px red";
+                document.getElementById("lblmail")
+                .style.visibility="visible";
+                return false;
+            }
+            else if(email.value.trim().length>15)
+            {
+                alert("*Email too long!");
+                email.style.border ="solid 2px red";
+                document.getElementById("lblmail")
+                .style.visibility="visible";
+                return false;
+            }
+            else if(password.value.trim()=="")
+            {
+                alert("*Password is Empty!");
+                password.style.border ="solid 2px red";
+                document.getElementById("lblpass")
+                .style.visibility="visible";
+                return false;
+            }
+            else if(password.value.trim().length<5)
+            {
+                alert("*Password should atleast be of 5 characters long!");
+                password.style.border ="solid 2px red";
+                document.getElementById("lblpass")
+                .style.visibility="visible";
+                return false;
+            }           
+            else
+            {
+                return true;
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -54,11 +96,13 @@
 
     <i class="fas fa-times" id="form-close"></i>
 
-    <form action="">
-        <h3>login</h3>
-        <input type="email" class="box" placeholder="enter your email">
-        <input type="password" class="box" placeholder="enter your password">
-        <input type="submit" value="login now" class="btn">
+    <form action="Connection.php" method="POST" onsubmit="return validate()">
+        <h3><u>Login</u></h3>
+        <input type="email" id="EMAIL" class="box" name="email" placeholder="enter your email" >
+        <label id="lblmail" style="color:red; visibility:hidden;">Invalid Syntax!</label>
+        <input type="password" id="PASS" class="box" name="password" placeholder="enter your password">
+        <label id="lblpass" style="color:red; visibility:hidden;">Invalid Syntax!</label>
+        <input type="submit" id="SUBMIT"value="login now" name="save_data" class="btn">
         <input type="checkbox" id="remember">
         <label for="remember">remember me</label>
         <p>forget password? <a href="#">click here</a></p>
@@ -434,7 +478,7 @@
             <div class="swiper-slide">
                 <div class="box">
                     <img src="images/pic1.png" alt="">
-                    <h3>john deo</h3>
+                    <h3>Random Person</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -448,7 +492,7 @@
             <div class="swiper-slide">
                 <div class="box">
                     <img src="images/pic2.png" alt="">
-                    <h3>john deo</h3>
+                    <h3>Random Person</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -462,7 +506,7 @@
             <div class="swiper-slide">
                 <div class="box">
                     <img src="images/pic3.png" alt="">
-                    <h3>john deo</h3>
+                    <h3>Random Person</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -476,7 +520,7 @@
             <div class="swiper-slide">
                 <div class="box">
                     <img src="images/pic4.png" alt="">
-                    <h3>john deo</h3>
+                    <h3>Random Person</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa adipisci quisquam sunt nesciunt fugiat odit minus illum asperiores dolorum enim sint quod ipsam distinctio molestias consectetur ducimus beatae, reprehenderit exercitationem!</p>
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -588,29 +632,12 @@
 
     </div>
 
-    <h1 class="credit"> created by <span> mr. web designer </span> | all rights reserved! </h1>
+    <h1 class="credit"> created by <span> Ayush Jhawar </span> | all rights reserved! </h1>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
 <script src="script.js"></script>
-
 </body>
 </html>
